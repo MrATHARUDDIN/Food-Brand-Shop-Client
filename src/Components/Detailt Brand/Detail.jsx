@@ -4,8 +4,9 @@ import { useContext } from "react";
 import { AuthContext } from "../../authentication/Private";
 
 
+
 const Detail = ({ data }) => {
-  const { photo, name, Price, _id } = data;
+  const { photo, name, Price, _id ,  } = data;
   const {user} = useContext(AuthContext)
   return (
     <div>

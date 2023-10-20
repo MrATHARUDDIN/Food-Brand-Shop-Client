@@ -30,7 +30,7 @@ const Private = ({ children }) => {
         setLoading(true);
         return signInWithEmailAndPassword (Auth , email ,password)
     }
-
+    
     const LogOut = () => {
         setLoading(true);
       return signOut(Auth);
