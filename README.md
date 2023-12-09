@@ -1,8 +1,18 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# My Website name : ShowDown
 
-Currently, two official plugins are available:
+My website is a Food Brand Website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+ My website link : https://food-project-9fa43.web.app/
+ - Server side repo : https://github.com/MrATHARUDDIN/Food-Brand-Shop-Server
+# My Website 
+
+- Full responsive  website for all device
+- User Friendly Website and Good looking Ui
+- You can find more Information about Food and Beverage
+- Email and password based Authentication Web
+- All data is Dynamic and come from Data base
+
+# Website Feature
+- User can see the menu of populare food brand and they can oder from maltipal brand in one time.
