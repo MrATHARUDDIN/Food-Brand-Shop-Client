@@ -43,7 +43,6 @@ const Login = () => {
     
     return (
         <div>
-
         <div className="hero min-h-screen bg-base-200">
         <form className="hero-content flex-col lg:flex-row-reverse" onSubmit={handlesubmit}>
           <div className="text-center lg:text-left">
@@ -51,7 +50,7 @@ const Login = () => {
             <p className="py-6">Make sure your alreday have an account in this webstie.<br />
             For create a new account <Link className="text-blue-500 font-semibold" to='/signup'>Register</Link> Now.</p>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card flex-shrink-0 w-9/12 flex-1 mr  max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -81,7 +80,6 @@ const Login = () => {
           </div>
         </form>
       </div>
-            
         </div>
     );
 };
