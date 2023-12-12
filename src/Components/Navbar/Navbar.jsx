@@ -6,7 +6,6 @@ import { AuthContext } from "../../authentication/Private";
 
 const Navbar = () => {
   const {user ,LogOut} = useContext(AuthContext);
-   
   const handlelogout = () => {
       LogOut();
   }
@@ -31,6 +30,7 @@ const Navbar = () => {
         { user && <>
           <li><NavLink to="/order" className='ml-2'>My Cart</NavLink></li>
           <li><NavLink to="/addproduct" className='ml-2'>Add Product</NavLink></li>
+          <li><NavLink to="/community" className='ml-2'>Community</NavLink></li>
         </>
           }
           <li><NavLink to="/Service" className='ml-2'>Service</NavLink></li>
@@ -52,6 +52,7 @@ const Navbar = () => {
       { user && <>
           <li><NavLink to="/order" className='ml-2'>My Cart</NavLink></li>
           <li><NavLink to="/addproduct" className='ml-2'>Add Product</NavLink></li>
+          <li><NavLink to="/community" className='ml-2'>Community</NavLink></li>
         </>
           }
           <li><NavLink to="/Service" className='ml-2'>Service</NavLink></li>
@@ -65,8 +66,8 @@ const Navbar = () => {
                             </div>
 }
                         { user && 
-                            <div className="w-10 mr-5 ml-2 rounded-full">
-                              <img src={user.photoURL} alt="" />
+                            <div className="w-10 ">
+                              <img src={user.photoURL} className="rounded-full" alt="" />
                             </div>
                         }
                         {

@@ -1,28 +1,77 @@
+import { useRef } from "react";
+import Swal from "sweetalert2";
+import emailjs from '@emailjs/browser';
+
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_0a61m6w', 'template_9j30mvg', form.current, 'V3ODORqf7MbJHGVLj')
+      .then((result) => {
+        console.log(result.text);
+        Swal.fire({
+          title: 'Message Sent!',
+          text: 'Your message has been sent successfully.',
+          icon: 'success',
+          confirmButtonText: 'OK',
+        });
+        form.current.reset();
+      })
+      .catch((error) => {
+        console.error(error.text);
+        Swal.fire({
+          title: 'Error!',
+          text: 'There was an error sending your message. Please try again later.',
+          icon: 'error',
+          confirmButtonText: 'OK',
+        });
+      });
+
+  };
+
   return (
-    <div className="bg-gray-100 h-screen mt-32 mb-20">
-      <div className="container mx-auto p-8">
-        <h1 className="text-3xl font-bold mb-7">Contact Us</h1>
-        <div className="bg-white p-8 rounded-md shadow-md">
-          <form>
-            <div className="mb-4">
-              <label htmlFor="name" className="block text-gray-600 mb-2">Name</label>
-              <input type="text" id="name" name="name" className="w-full px-3 py-2 border rounded-lg" />
-            </div>
-            <div className="mb-4">
-              <label htmlFor="email" className="block text-gray-600 mb-2">Email</label>
-              <input type="email" id="email" name="email" className="w-full px-3 py-2 border rounded-lg" />
-            </div>
-            <div className="mb-4">
-              <label htmlFor="message" className="block text-gray-600 mb-2">Message</label>
-              <textarea id="message" name="message" rows="4" className="w-full px-3 py-2 border rounded-lg" />
-            </div>
-            <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Submit</button>
-          </form>
-        </div>
+    <form className="mt-6 flex flex-col items-center" ref={form} onSubmit={sendEmail}>
+      <div className="max-w-md mt-2 w-full">
+        <label className="text-gray-600">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="user_name"
+          className="mt-2 px-4 py-2 border rounded-lg w-full focus:outline-none focus:border-blue-400"
+          placeholder="Name"
+          required
+        />
       </div>
-    </div>
-  );
+
+      <div className="max-w-md mt-2 w-full">
+        <label className="text-gray-600">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          name="user_email"
+          className="mt-2 px-4 py-2 border rounded-lg w-full focus:outline-none focus:border-blue-400"
+          placeholder="you@example.com"
+          required
+        />
+      </div>
+
+      <div className="max-w-md mt-2 w-full">
+        <label className="text-gray-600">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          className="mt-2 px-4 py-2 border rounded-lg w-full focus:outline-none focus:border-blue-400"
+          placeholder="Message"
+          required
+        />
+      </div>
+
+      <input type="submit" className="btn btn-primary mt-5 w-32" value="Send" />
+    </form>
+    )
 };
 
 export default Contact;

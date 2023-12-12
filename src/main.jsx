@@ -19,6 +19,7 @@ import Contact from './Components/Contuct/Contuct.jsx';
 import Update from './Update/Update.jsx';
 import Error from './Components/Error Page/Error.jsx';
 import Views from './View/Views.jsx';
+import Community from './Components/Community/Community.jsx';
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
       {
         path: `/Contact`,
         element: <Contact></Contact>
+      },
+      {
+        path: `/community`,
+        element: <Community></Community>
       },
       {
         path:'/update/:id',
